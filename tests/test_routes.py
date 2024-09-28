@@ -206,13 +206,13 @@ class TestProductRoutes(TestCase):
         new_count = self.get_product_count()
         self.assertEqual(new_count,product_count - 1)
     
-    # def test_get_product_list(self):
-    #     """It shoul Get a list of Products"""
-    #     self._create_products(5)
-    #     response = self.client.get(BASE_URL)
-    #     self.asserEqual(response.status_code, status.HTTP_200_OK)
-    #     data = response.get_json()
-    #     self.assertEqual(len(data), 5)
+    def test_get_product_list(self):
+        """It shoul Get a list of Products"""
+        self._create_products(5)
+        response = self.client.get(BASE_URL)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        data = response.get_json()
+        self.assertEqual(len(data), 5)
     
     # def test_query_by_name(self):
     #     """It should Query Products by name"""
