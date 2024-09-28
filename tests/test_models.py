@@ -151,7 +151,7 @@ class TestProductModel(unittest.TestCase):
     
     def test_find_product_by_name(self):
         """It should find a product by name"""
-        products = Product.factory.create_batch(5)
+        products = ProductFactory.create_batch(5)
         for product in products:
             product.create()
         name = products[0].name
@@ -164,7 +164,7 @@ class TestProductModel(unittest.TestCase):
 
     def test_find_product_by_availability(self):
         """It should fin product by availability"""
-        products = Product.factory.create_batch(10)
+        products = ProductFactory.create_batch(10)
         for product in products:
             product.create()
         available = products[0].available
@@ -177,7 +177,7 @@ class TestProductModel(unittest.TestCase):
 
     def test_find_product_by_category(self):
         """It should fin product by category"""
-        products = Product.factory.create_batch(10)
+        products = ProductFactory.create_batch(10)
         for product in products:
             product.create()
         category = products[0].category
