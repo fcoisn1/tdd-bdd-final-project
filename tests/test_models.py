@@ -141,12 +141,12 @@ class TestProductModel(unittest.TestCase):
     
     def test_list_all_products(self):
         """It should list all products"""
-        products = Product.all
+        products = Product.all()
         self.assertEqual(products, [])
         for _ in range (5):
             product = ProductFactory()
             product.create()
-        products = Product.all
+        products = Product.all()
         self.assertEqual(len(products), 5)
     
     def test_find_product_by_name(self):
