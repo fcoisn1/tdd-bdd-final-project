@@ -191,9 +191,9 @@ def list_products():
         products = Product.find_by_availability(available_value)
     else:
         app.logger.info("Find all")
-        products = Products.all()
+        products = Product.all()
     
-    results = [product.serialize() for produt in products]
+    results = [product.serialize() for product in products]
     app.logger.info("[%s] Products returned", len(results))
     return results, status.HTTP_200_OK
 
