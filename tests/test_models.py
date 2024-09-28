@@ -128,7 +128,7 @@ class TestProductModel(unittest.TestCase):
         #but the data did change
         products = Product.all()
         self.assertEqual(len(products), 1)
-        self.assertEqual(products[0], original_id)
+        self.assertEqual(products[0].id, original_id)
         self.assertEqual(products[0].description, "testing")
         
     def test_delete_product(self):
